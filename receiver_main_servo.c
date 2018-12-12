@@ -59,15 +59,15 @@ __interrupt void USCI0RX_ISR(void)
       if (((serialReg & 0x3F) >= 0) && ((serialReg & 0x3F) <= 0x1F))
       {
           // set PWM for servos
-          TA1CCR1 = 0x07D0;
-          TA1CCR2 = 0x07D0 - (serialReg & 0x1F)*32; // value between 0x03E8 and 0x07D0;
+          TA1CCR1 = 0x07D0 - (serialReg & 0x1F)*32; // value between 0x03E8 and 0x07D0;
+          TA1CCR2 = 0x07D0;
       }
       // if the potentiometer is right of center
       else
       {
           // set PWM for servos
-          TA1CCR1 = 0x03E8 + (serialReg & 0x1F)*32; // value between 0x03E8 and 0x07D0;
-          TA1CCR2 = 0x07D0;
+          TA1CCR1 = 0x03E8;
+          TA1CCR2 = 0x07D0 - (serialReg & 0x1F)*32; // value between 0x03E8 and 0x07D0;
       }
    }
 }
