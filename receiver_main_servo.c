@@ -25,8 +25,8 @@ void main(void)
    P1SEL2 |= 0x06;                  // ...by settings both of these registers
 
    // configure timer A1
-   TA1CCTL1 = OUTMOD_3;             // set to OUTMOD_3 for pwm set/reset
-   TA1CCTL2 = OUTMOD_3;             // set to OUTMOD_3 for pwm set/reset
+   TA1CCTL1 = OUTMOD_7;             // set to OUTMOD_7 for pwm reset/set
+   TA1CCTL2 = OUTMOD_7;             // set to OUTMOD_7 for pwm reset/set
    TA1CCR0 = 0x4E20;                // set to 20000 (20ms period)
    TA1CCR1 = 0x03E8;                // set to 1000 (1ms pulse)
    TA1CCR2 = 0x07D0;                // set to 2000 (2ms pulse)
