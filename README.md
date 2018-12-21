@@ -2,18 +2,18 @@
 A compact car and a wireless controller are made using two MSP430 Launchpads and Bluetooth communication. This was done with an MSP430G2553, an MSP430F5529, a potentiometer, two HC-05 Bluetooth modules, and four FS90R servos.
 
 ## Motivation
-I was primarily motivated to build an RC car that had finer control over a conventional low cost RC car. This included factors such as responsiveness and the number of unique turning radiuses achievable.
+I was primarily motivated to build an RC car that had finer control over a conventional low-cost RC car. This included factors such as responsiveness and the number of unique turning radiuses achievable.
 
 ## Design Criteria
-* Create a "stearing wheel" using a potentiometer on the controller
-* Communicate between the controller and the car over bluetooth
+* Create a "steering wheel" using a potentiometer on the controller
+* Communicate between the controller and the car over Bluetooth
 * Control four servos on the car based on the potentiometer position
 
 ## Software Implementation
 ### MSP430G2553
 The MSP430G2553 is the board used for the car. All the code for this board was written in Code Composer Studio and can be found in the file: receiver_main.c
 
-This software implementation involved using UART to recevie data from the Bluetooth module and hardware PWM to write various speeds to the left and right motors.
+This software implementation involved using UART to receive data from the Bluetooth module and hardware PWM to write various speeds to the left and right motors.
 
 ### MSP430F5529
 The MSP430F5529 is the board used for the controller. All the code for this board was written in Energia and can be found in the file: transmitter_sketch.ino
@@ -32,7 +32,7 @@ The controller was made up of the MSP430F5529, an HC-05 Bluetooth module, and a 
 Create a new project in Code Composer that uses the MSP430G2553. I used CCS 8.2.0 for this. Add the code to your project by adding the file directly or copying and pasting the contents of the file into a new file. Debug and let CCS flash the code to your processor. If there are any updates, update your board. Once the code is running on your board, you can unplug it and move on to the hardware portion of the setup.
 
 ### MSP430F5529
-Using Energia, open the sketch from the repo, or copy and paste the contents of the sketch into a new one. I used Energia 1.8.7E21 for this. Go to 'Tools' > 'Board:' and select the MSP430F5529. Then, go to 'Tools' > 'Port' and ensure that the COM port of your MSP430F5529 is selected. Next, click the upload button near the top left of the window. After the code has been flashed to the board, it can be unplugged and you can move on to the hardware portion of the setup.
+Using Energia, open the sketch from the repo, or copy and paste the contents of the sketch into a new one. I used Energia 1.8.7E21 for this. Go to 'Tools' > 'Board:' and select the MSP430F5529. Then, go to 'Tools' > 'Port' and ensure that the COM port of your MSP430F5529 is selected. Next, click the upload button near the top left of the window. After the code has been flashed to the board, it can be unplugged, and you can move on to the hardware portion of the setup.
 
 ## How-to Hardware
 ### MSP430G2553
